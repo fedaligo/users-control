@@ -14,7 +14,7 @@ public interface HibernateUserRepository extends CrudRepository<HibernateUser, L
     Optional<HibernateUser> findByLogin(String login);
     Optional<HibernateUser> findById(Long id);
 
-    @Override
+    @Query("select hu from HibernateUser hu ORDER BY hu.id")
     List<HibernateUser> findAll();
 
     HibernateUser findByLoginAndPassword(String login, String password);

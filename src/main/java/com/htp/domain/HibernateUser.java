@@ -3,6 +3,7 @@ package com.htp.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.sql.Timestamp;
 
 @Setter
@@ -35,6 +36,7 @@ public class HibernateUser {
     private String status;
 
     @Column
+    @Email
     private String mail;
 
 }
